@@ -1,0 +1,37 @@
+type ResponseDataDeleteQuestion = 
+ record {
+   data: text;
+   status: bool;
+ };
+type ResponseDataAllQuestions = 
+ record {
+   data: vec record {
+               text;
+               text;
+             };
+   status: bool;
+ };
+type ResponseDataAllFiles = 
+ record {
+   data: vec record {
+               text;
+               text;
+             };
+   status: bool;
+ };
+type ResponseData = 
+ record {
+   data: text;
+   status: bool;
+ };
+service : {
+  addQuestion: (text, text) -> (ResponseData);
+  deleteQuestion: (text) -> (ResponseDataDeleteQuestion);
+  getAllFiles: () -> (ResponseDataAllFiles) query;
+  getAllQuestions: () -> (ResponseDataAllQuestions) query;
+  getFile: (text) -> (ResponseData) query;
+  getQuestion: (text) -> (ResponseData) query;
+  saveFile: (text, text) -> (ResponseData);
+  saveFile1: (text, text) -> (ResponseData);
+  tokeninit: (text, text, text, nat8, nat, principal, nat) -> (principal);
+}

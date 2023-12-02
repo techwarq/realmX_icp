@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "realmx4_backend": {
+      "main": "src/realmx4_backend/main.mo",
+      "type": "motoko"
+    },
+    "realmx4_frontend": {
+      "dependencies": [
+        "realmx4_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/realmx4_frontend/src/index.html"
+      },
+      "source": [
+        "src/realmx4_frontend/assets",
+        "dist/realmx4_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
